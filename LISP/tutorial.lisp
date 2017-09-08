@@ -25,3 +25,10 @@
 	(cond
 	 ((= i '1) (return-from check_unit T))))
   NIL)
+
+(defun inc (val)
+  (cond ((numberp val) (+ 1 val))
+	(t val)))
+
+(defun incall(lst)
+  (mapcar inc lst))
