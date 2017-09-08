@@ -1,0 +1,10 @@
+
+;;;Custom list reversion routine
+;;;args:
+;;;lst - list data
+(defun rev(lst)
+  (cond
+   ((listp lst) (cond
+		 ((cdr lst) (append (rev (cdr lst)) (list (car lst))))
+		 (t lst)))
+   (T "Argument is not a list")))
