@@ -31,4 +31,17 @@
 	(t val)))
 
 (defun incall(lst)
-  (mapcar inc lst))
+  (mapcar 'inc lst))
+
+(defun repl(lst x y)
+;;  (format t "~a ~a ~a~%" lst x y)
+  (if (listp lst)
+      (mapcar (lambda (l) (repl l x y)) lst)
+    (if (= lst x) y lst)))
+
+(defun drop-nth(lst idx)
+  (append (subseq lst 0 idx) (subseq lst (1+ idx) (length lst))))
+
+
+(defun ins(lst idx val)
+  (append (subseq lst 0 idx) (list val) (subseq lst idx (length lst))))
