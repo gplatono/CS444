@@ -1,0 +1,107 @@
+.page {
+    position: absolute;
+    left: 20%;
+    top: 0px;
+    width: 60%;
+    height: 100%;
+    border: 0px;
+    margin: 0px;
+    padding: 0px;
+    background-color: #000000;
+}
+
+header {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    background-color: #233237;//#000077;
+    margin: 0 auto;
+}
+
+footer {
+    position: relative;
+    width: 100%;
+    height: 200px;
+    background-color: #000000;
+}
+
+center {
+    display: block;
+    position: relative;
+    width: 100%;
+    height: 3000px;
+    min-height: 3000px;
+    background-color: #FBFBFB;
+    overflow: hidden;
+}
+
+.menu {
+    //display: table-row;
+    position: absolute;
+    width: 20%;
+    height: 100%;
+    padding: 10px;
+    background-color: #76323F;//#000000;
+    float: right;
+}
+
+.content {
+    //display: table-row;
+    position: absolute;
+    left: 20%;
+    width: 80%;
+    //height: 100%;
+    padding: 15px;
+    //border: 10px;
+    text-align: justify;
+    text-justify: inter-word;
+    float: right;
+    //overflow: hidden;
+}
+
+.pagetitle {
+    position:absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    height: 100px;
+    width: 100%;
+    text-align: right;
+}
+
+.title {
+    color: #FFFFFF;
+    font-size: 220%;
+    padding: 10px;
+}
+
+.subtitle {
+    color: #FFFFFF;
+    font-size: 150%;
+    padding: 10px;
+}
+
+.stafftable {
+    width: 90%;
+    display: table;
+    border-collapse: collapse;
+    //border: 1px solid #AAAAAA;
+    text-align: center;    
+}
+
+td {
+    //background: #FFFFFF;    
+    border-top: 2px solid #aaaaaa;
+    padding: 8px;
+}
+
+tr:nth-child(even) {
+    border-top: 1px solid #AAAAAA;
+}
+
+
+* { 
+    -moz-box-sizing: border-box; 
+    -webkit-box-sizing: border-box; 
+     box-sizing: border-box; 
+}

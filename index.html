@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    <title>CSC 244/444 Fall 2017</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+  
+  </head>
+  <body>
+    <div class="page">
+      <header>
+	<div class="pagetitle">
+	  <p class="title">
+	    CS244/CS444 Logical Foundations of Artificial Intelligence (FALL 2017)
+	  </p>
+	  <p class="subtitle">
+	    TA's homepage
+	  </p>	  
+	<div>
+      </header>
+      <center>
+	<div class="menu">
+	</div>
+	<div class="content">
+	  <h2>Staff</h2>
+	  <table class="stafftable" align="center">
+	    <tbody>
+	      <tr>
+		<th>Name</th>
+		<th>Position</th>
+		<th>Email</th>
+		<th>Office</th>
+		<th>Office Hours</th>
+	      </tr>	    
+	      <tr>
+		<td>Lenhart Schubert</td>
+		<td>Instructor</td>
+		<td>schubert@cs.rochester.edu</td>
+		<td>Weg 3003</td>
+		<td>Tue, Thu 5:00-6:30pm or by appointment</td>
+	      </tr>
+	      <tr>
+		<td>Georgiy Platonov</td>
+		<td>Graduate TA</td>
+		<td>gplatono@cs.rochester.edu</td>
+		<td>Weg 2405</td>
+		<td>Wed 3:40-4:40pm, Fri 5:00-6:00pm or by appointment</td>
+	      </tr>
+	      <tr>
+		<td>Andrii Osipa</td>
+		<td>Graduate TA</td>
+		<td>aosipa@cs.rochester.edu</td>
+		<td>(Tentatively) Masters Lab on Weg Hall 2nd floor</td>
+		<td>Mon, Wed 1:30-2:30pm or by appointment</td>
+	      </tr>
+	      <tr>
+		<td>Zining Wen</td>
+		<td>Graduate TA</td>
+		<td>zwen6@ur.rochester.edu</td>
+		<td>(Tentatively) Masters Lab on Weg Hall 2nd floor</td>
+		<td>Tue, Wed and Thu after 2pm or by appointment</td>
+	      </tr>
+	    </tbody>
+	  </table>
+
+  	  <h2>Announcements</h2>
+
+	  <ul>
+	    <li>09/07/2017: First LISP tutorial will be held on 09/08/2017 (Friday) from 5pm to 6pm at Goergen Hall 109. The place is subject to a change as I need to check if I can use my laptop with the projector there, but the time is fixed. For the people who cannot make it this Friday I will hold another tutorial next week (we'll figure out the date later).</li>
+	  </ul>
+
+	  <h2>General info</h2>
+	  <p>Classes are on Tuesdays and Thursdays, at 9:40am-10:55am, in CSB 601.</p>
+
+	  <p>For programming assignments Allegro Common Lisp is recommended (which can be accessed by the <i>acl</i> command in the terminal, or, alternatively through this path: <i>/p/lisp/acl/linux/latest/alisp</i>). If you cannot access Allegro, you can use Steel Bank Common Lisp (SBCL). SBCL is integrated in the system, so just type <i>sbcl</i> to run the REPL.</p>
+
+
+	  <h2>Submitting Assignments</h2>
+	  All written assignments must be put in my mailbox (in the CS mailroom - Weg 2601) before the time the assignment is due, or submitted in person just before the relevant class meeting. Programming assignments should be submitted via the turn_in script:
+
+	  <ul>
+	    <li>For grads: <b> /u/cs444/turn_in &lt;dir> </b> </li>
+	    <li>For undergrads: <b> /u/cs244/turn_in &lt;dir> </b> </li>
+	  </ul>
+
+	  where <b>&lt;dir></b> is the directory containing all the files in your submission.
+
+	  <br>
+	  For each programming assignment, your submission must include the following three separate files (or face grade penalties):
+
+	  <ul>
+	    <li>yourCSid_src.lisp <br> the source file containing all the code necessary for your solutions to the assignment;</li>
+	    <li>yourCSid_test.lisp <br> the test file containing your test strategies and test cases to demonstrate the correctness of your code;</li>
+	    <li>README <br> the writeup for the assignment.</li>
+	  </ul>	  
+	  
+	  If you have problems with turn_in, please email TA and ask for assistance. If it's close to the submission deadline, go ahead and email your assignment to TA to avoid late penalties.
+
+	  <br>
+	  <br>
+	  <b>!!NOTE!!: If you are a master student and cannot access /u/cs444/turn_in, use /u/cs244/turn_in.</b>
+	      
+	  <h2>Homework Guidelines</h2>
+	  The source code accounts for about 60% of the grade and the rest is based on your test file, writeup, and coding style.
+
+	  <h3>Code Style</h3>
+
+	  Please comment your code thoughtfully:
+
+	  <ul>
+	    <li>At the beginning of each function, provide a statement of its purpose, the meaning and type of each of the parameters (with an example if the value has some special form), and the return value or effect of the function. </li>
+	    <li>If anything is unclear in the body of a function, explain what is going on. This ranges from places where you are taking cars of cdrs of cars, to places where your recursive solution hinges on the fact that some recursive call has already taken care of the special case that the user might wonder about. When in doubt, comment.</li>	    
+	  </ul>
+
+	  Try to keep your Lisp code to 80 characters or less per line, and indent meaningfully. We should not have to modify any of your source code to grade your submission. If you can't get a particular function to work, please define a stub which prints a meaningful message such as "STUB: function [function-name] not implemented.". Be careful with global variables as they may be rewritten where you don't expect. Don't forget to type-check your inputs.
+
+
+	  <h3>Test File</h3>
+
+
+	  Include test cases for each problem, and make your test file (*_test.lisp) executable in one of the Common Lisp implementations on the URCS servers (preferably Allegro Common Lisp). A good, modular test framework for Lisp can be found in Practical Common Lisp. The basic idea is to print, for each test case:
+
+	  <ul>
+	    <li>the function and input being tested,</li>
+	    <li>the expected result,</li>
+	    <li>an indication of whether the test case passed or failed, and</li>
+	    <li>(optionally) the actual result.</li>
+	  </ul>
+	  
+	  The TA should be able to tell, after reading your testing document, how well you understood the problem. Make sure to test all boundary cases (e.g., empty list, symbols, non-empty lists).
+
+	  <h3>Writeup/README</h3>
+
+	  Please include the following in your writeup:
+
+	  <ul>
+	    <li>the names of all your program and data files, with short descriptions of contents, if this is not evident from the names;</li>
+	    <li>the names and types of arguments for functions we have to call to test your program;</li>
+	    <li>general description of the algorithm, including your design choices such as storing data in a hash table vs a list; (In general, if you think I may have trouble understanding any part of the code, and the necessary explanations are inappropriate or beyond the scope of function or inline comments, then those explanations should be included in the README.)</li>
+	    <li>the input and output data format;</li>
+	    <li>which CL implementation you used</li>
+	    <li>known bugs you did not have time to fix;</li>
+	    <li>answers to any questions asked in the assignment;</li>
+	    <li>(if applicable to you) which provided solutions (which version, which author, and which previous phase) you have used in your current version.</li>
+	  </ul>
+	  
+	  The level of detail of the write up should be proportional to the complexity of the code, if the function does something simple, e.g., sorts the lists, just mention it in a few words. Also, if you're running out of time and cannot implement something, describe in more detail how you would have done it - you may get some credit for this, too.
+
+	  <h3>Late Assignments</h3>
+
+	  Late assignments will sometimes be accepted, depending on your circumstances, with a 20% reduction in grade for every day late. Submissions will no longer be accepted once it is necessary for me to distribute grades or discuss solutions. We may refuse to accept severely late assignments, depending on the time required to grade the particular assignment or the quality of your excuse.
+
+	  <h3>Regrade Policy</h3>
+
+	  All regrade requests should be done within five weekdays of receiving your mark by email. No appeals will be accepted after this period. In addition, when presenting your request, you must submit a written statement of why you contest your mark and which questions you'd like me to re-evaluate. Requests will not be accepted without your written statement.
+
+	  <h2>Credits</h2>
+	  The structure and content of this page was mostly borrowed from Gene L. Kim's <a href="http://www.cs.rochester.edu/u/gkim21/cs444/">page</a>, who was the previous TA for this class.
+
+	  <h2>Reference materials</h2>
+	  <p><a href="http://mypage.iu.edu/~colallen/lp/" >Here</a> you can find a Lisp primer with exercises.</p>
+	  <p>Good, accessible intro to Lisp: <a href="http://www.gigamonkeys.com/book/">Practical Common Lisp</a> free online book.</p>
+	  <p>Emacs tutorial: <a href="http://www.jesshamrick.com/2012/09/10/absolute-beginners-guide-to-emacs/">absolute beginners guide to emacs</a>.</p>
+	  <p>More advanced book about Lisp for those who are interested: <a href="http://www.paulgraham.com/onlisptext.html">On Lisp</a>.</p>
+	  <p>Yet another book on more advanced Lisp practices:<a href="https://letoverlambda.com/index.cl/toc">Let Over Lambda</a>.</p>
+
+	</div>
+	<!--<div id="clear" style="clear:both;"></div>-->
+      </center>
+      <!--<footer></footer>      -->
+    </div>
+    
+  </body>  
+</html>
