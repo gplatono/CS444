@@ -1,0 +1,6 @@
+(defun occur-in (elem lst)
+  (if (eq elem lst) T
+    (if (and (not (null lst)) (listp lst))
+	(or
+	 (occur-in elem (car lst))
+	 (occur-in elem (cdr lst))))))
